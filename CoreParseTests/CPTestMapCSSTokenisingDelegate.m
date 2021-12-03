@@ -56,7 +56,7 @@
     }
     else if (inRange && [token isNumberToken])
     {
-        return [[(CPNumberToken *)token number] floatValue] >= 0;
+        return [[(CPNumberToken *)token numberValue] floatValue] >= 0;
     }
     else if ([token isKeywordToken])
     {
