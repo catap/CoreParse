@@ -12,9 +12,6 @@
 #import "CPGrammar.h"
 
 @implementation CPRHSItem
-{
-    NSMutableSet *_tags;
-}
 
 @synthesize alternatives = _alternatives;
 @synthesize repeats = _repeats;

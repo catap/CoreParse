@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface CPRHSItem : NSObject <NSCopying>
+{
+    NSMutableSet *_tags;
+}
 
 @property (readwrite,copy  ) NSArray *alternatives;
 

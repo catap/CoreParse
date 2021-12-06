@@ -13,10 +13,6 @@
 #import "CPShiftReduceAction.h"
 
 @implementation CPShiftReduceActionTable
-{
-    NSMutableDictionary **table;
-    NSUInteger capacity;
-}
 
 - (id)initWithCapacity:(NSUInteger)initCapacity
 {

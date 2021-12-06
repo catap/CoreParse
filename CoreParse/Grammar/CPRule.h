@@ -20,6 +20,11 @@
  * property is provided to allow you to easily identify which rule has been matched.
  */
 @interface CPRule : NSObject <NSCoding>
+{
+    NSMutableArray *rightHandSide;
+    BOOL _shouldCollapse;
+    NSSet *_tagNames;
+}
 
 ///---------------------------------------------------------------------------------------
 /// @name Creating and Initialising a Rule

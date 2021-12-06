@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CPParser.h"
+#import "CPTokeniser.h"
+
 /**
  * The CPJSONParser class is a demonstration of CoreParse.
  * 
@@ -15,6 +18,10 @@
  * the code needed to process unicode characters is non-trivial, and not particularly relevant to the demonstration.
  */
 @interface CPJSONParser : NSObject
+{
+    CPTokeniser *jsonTokeniser;
+    CPParser *jsonParser;
+}
 
 /**
  * Parses a JSON string and returns a standard objective-c data structure reflecting it:

@@ -98,7 +98,7 @@
         BOOL hasErrorToken = NO;
         while (1)
         {
-            @autoreleasepool
+            NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
             {
                 CPShiftReduceAction *action = [self actionForState:[(CPShiftReduceState *)[stateStack lastObject] state] token:nextToken];
                 
@@ -228,6 +228,7 @@
                     }
                 }
             }
+            [pool drain];
         }
     }
     @catch (NSException *e)

@@ -18,6 +18,11 @@
  * Tokenisers that consume their entire input with no errors should produce a CPEOFToken at the end of the stream to inform parsers that the stream is complete.
  */
 @interface CPTokenStream : NSObject
+{
+    BOOL isClosed;
+    NSMutableArray *tokens;
+    NSConditionLock *readWriteLock;
+}
 
 ///---------------------------------------------------------------------------------------
 /// @name Creating and Initialising Token Streams

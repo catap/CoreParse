@@ -41,12 +41,12 @@
     NSUInteger idx = 0;
     for (NSSet *kernel in kernels)
     {
-        @autoreleasepool
+        NSAutoreleasePool *pool1 = [[NSAutoreleasePool alloc] init];
         {
             NSSet *itemsSet = [aug lr1Closure:kernel];
             for (CPLR1Item *item in itemsSet)
             {
-                @autoreleasepool
+                NSAutoreleasePool *pool2 = [[NSAutoreleasePool alloc] init];
                 {
                     CPGrammarSymbol *next = [item nextSymbol];
                     if (nil == next)
@@ -93,6 +93,7 @@
                         }
                     }
                 }
+                [pool2 drain];
             }
             
             for (NSString *nonTerminalName in allNonTerminalNames)
@@ -118,6 +119,7 @@
                 }
             }
         }
+        [pool1 drain];
         
         idx++;
     }

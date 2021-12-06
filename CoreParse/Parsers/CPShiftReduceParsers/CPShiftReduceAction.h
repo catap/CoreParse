@@ -12,7 +12,25 @@
 
 #import "CPGrammar.h"
 
+typedef enum
+{
+    kActionTypeShift = 0,
+    kActionTypeReduce   ,
+    kActionTypeAccept
+} ActionType;
+
+typedef union
+{
+    NSUInteger shift;
+    CPRule *reductionRule;
+}
+ActionDetails;
+
 @interface CPShiftReduceAction : NSObject <NSCoding>
+{
+    ActionType type;
+    ActionDetails details;
+}
 
 + (id)shiftAction:(NSUInteger)shiftLocation;
 + (id)reduceAction:(CPRule *)reduction;

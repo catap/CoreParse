@@ -72,6 +72,15 @@
 
 @end
 
+typedef struct
+{
+    unsigned int shouldConsumeToken:1;
+    unsigned int requestsPush:1;
+    unsigned int willProduceToken:1;
+    unsigned int didNotFindTokenOnInputPositionError:1;
+    
+} CPTokeniserDelegateResponseCache;
+
 /**
  * The CPTokeniser class provides tokenisation of NSStrings into CPTokenStreams, and describes what kinds of tokens to produce given particular string inputs.
  *   
@@ -83,6 +92,9 @@
  * the output stream.
  */
 @interface CPTokeniser : NSObject <NSCoding>
+{
+    CPTokeniserDelegateResponseCache delegateRespondsTo;
+}
 
 ///---------------------------------------------------------------------------------------
 /// @name Managing the Delegate

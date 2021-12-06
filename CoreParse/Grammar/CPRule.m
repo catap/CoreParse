@@ -12,11 +12,6 @@
 #import "CPGrammarSymbol.h"
 
 @implementation CPRule
-{
-    NSMutableArray *rightHandSide;
-    BOOL _shouldCollapse;
-    NSSet *_tagNames;
-}
 
 @synthesize name;
 @synthesize tag;

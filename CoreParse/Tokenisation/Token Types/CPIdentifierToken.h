@@ -16,6 +16,9 @@
  * These tokens return `@"Identifier"` as their name.
  */
 @interface CPIdentifierToken : CPToken
+{
+    NSString *identifier;
+}
 
 ///---------------------------------------------------------------------------------------
 /// @name Creating and Initialising an Identifier Token

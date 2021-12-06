@@ -24,10 +24,6 @@
 @end
 
 @implementation CPJSONParser
-{
-    CPTokeniser *jsonTokeniser;
-    CPParser *jsonParser;
-}
 
 - (id)init
 {

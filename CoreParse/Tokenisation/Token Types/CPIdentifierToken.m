@@ -9,9 +9,6 @@
 #import "CPIdentifierToken.h"
 
 @implementation CPIdentifierToken
-{
-    NSString *identifier;
-}
 
 @synthesize identifier;
 

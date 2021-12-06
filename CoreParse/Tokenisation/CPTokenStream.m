@@ -23,11 +23,6 @@ typedef enum
 } CPTokenStreamLockCondition;
 
 @implementation CPTokenStream
-{
-    BOOL isClosed;
-    NSMutableArray *tokens;
-    NSConditionLock *readWriteLock;
-}
 
 + (id)tokenStreamWithTokens:(NSArray *)tokens
 {

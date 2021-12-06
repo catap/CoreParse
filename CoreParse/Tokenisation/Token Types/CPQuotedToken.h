@@ -16,6 +16,11 @@
  * These tokens return the name specified on their creation as their name.
  */
 @interface CPQuotedToken : CPToken
+{
+    NSString *content;
+    NSString *quoteType;
+    NSString *name;
+}
 
 ///---------------------------------------------------------------------------------------
 /// @name Creating and Initialising a Quoted Literal Token

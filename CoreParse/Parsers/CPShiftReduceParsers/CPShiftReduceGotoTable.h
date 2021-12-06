@@ -11,7 +11,10 @@
 @class CPRule;
 
 @interface CPShiftReduceGotoTable : NSObject <NSCoding>
-{}
+{
+    NSMutableDictionary **table;
+    NSUInteger capacity;
+}
 
 - (id)initWithCapacity:(NSUInteger)capacity;
 

@@ -10,12 +10,6 @@
 
 
 @implementation CPQuotedToken
-{
-@private
-    NSString *content;
-    NSString *quoteType;
-    NSString *name;
-}
 
 @synthesize content;
 @synthesize quoteType;

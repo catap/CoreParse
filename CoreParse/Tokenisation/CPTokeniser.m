@@ -11,15 +11,6 @@
 #import "CPEOFToken.h"
 #import "CPErrorToken.h"
 
-typedef struct
-{
-    unsigned int shouldConsumeToken:1;
-    unsigned int requestsPush:1;
-    unsigned int willProduceToken:1;
-    unsigned int didNotFindTokenOnInputPositionError:1;
-    
-} CPTokeniserDelegateResponseCache;
-
 @interface CPTokeniser ()
 
 @property (readwrite, retain) NSMutableArray *tokenRecognisers;
@@ -30,9 +21,6 @@ typedef struct
 @end
 
 @implementation CPTokeniser
-{
-    CPTokeniserDelegateResponseCache delegateRespondsTo;
-}
 
 @synthesize tokenRecognisers;
 @synthesize delegate;
@@ -119,7 +107,7 @@ typedef struct
     
     while (currentTokenOffset < inputLength)
     {
-        @autoreleasepool
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         {
             BOOL recognised = NO;
             for (id<CPTokenRecogniser> recogniser in recs)
@@ -180,6 +168,7 @@ typedef struct
                 }
             }
         }
+        [pool drain];
     }
     if (inputLength <= currentTokenOffset)
     {

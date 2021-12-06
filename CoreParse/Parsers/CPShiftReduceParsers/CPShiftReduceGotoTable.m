@@ -10,10 +10,6 @@
 
 
 @implementation CPShiftReduceGotoTable
-{
-    NSMutableDictionary **table;
-    NSUInteger capacity;
-}
 
 - (id)initWithCapacity:(NSUInteger)initCapacity
 {
